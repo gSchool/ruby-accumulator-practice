@@ -3,6 +3,23 @@
 #
 # You can use any methods you like on the input array
 def to_sentence(array)
+  sentence = ""
+  j = array.length
+  i = 0
+  array.each do |word|
+    if sentence == ""
+      sentence = "#{word},"
+    elsif (i+1) == j
+      sentence += " and #{word}"
+    elsif (i+2) == j
+      sentence += " #{word}"
+    else
+      sentence += " #{word},"
+    end
+    i += 1
+  end
+
+  sentence
 end
 
 require 'rspec'

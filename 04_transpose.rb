@@ -2,6 +2,20 @@
 #
 # You can use any methods you like on the input array except `#transpose`
 def transpose(array)
+  result = Array.new(array.length) { Array.new(array.length) { 0 }}
+  i = 0
+  j = 0
+
+  until i == array.length
+    j = 0
+    until j == array.length
+      result[i][j] = array[j][i]
+      j += 1
+    end
+  i += 1
+  end
+
+  result
 end
 
 require 'rspec'
